@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 
 import Link from 'next/link'
+
 import Logo from './logo'
 import Dropdown from '@/components/utils/dropdown'
 import MobileMenu from './mobile-menu'
@@ -11,7 +12,7 @@ export default function Header() {
 
   const [top, setTop] = useState<boolean>(true)
 
-  // detect whether user has scrolled the page down by 10px
+  // detect whether the user has scrolled the page down by 10px
   const scrollHandler = () => {
     window.pageYOffset > 10 ? setTop(false) : setTop(true)
   }  
@@ -28,15 +29,15 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
 
           {/* Site branding */}
-          <div className="shrink-0 mr-4">
+          <div className={`shrink-0 mr-4 transition-transform ${!top ? 'transform translate-x-1/2' : ''}`}>
             <Logo />
           </div>
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
-            {/* Desktop sign in links */}
+            {/* Desktop sign-in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
-              {/* Removed the signin and signup links */}
+              {/* Removed the sign-in and sign-up links */}
             </ul>
 
           </nav>

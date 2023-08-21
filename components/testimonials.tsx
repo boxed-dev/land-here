@@ -1,7 +1,52 @@
+import Image from 'next/image';
+import TestimonialImage from '@/public/images/testimonial.jpg';
+
 export default function UpcomingFeatures() {
+  const features = [
+    {
+      quote: "📂 Multiple Files Support: Seamlessly work with multiple files at once.",
+      name: "Multiple Files Support",
+      company: "BizAI",
+    },
+    {
+      quote: "🔄 Seamless CRM Integrations: Easily integrate with your CRM systems.",
+      name: "Seamless CRM Integrations",
+      company: "BizAI",
+    },
+    {
+      quote: "📧 Gmail and Calendar Integrations: Connect with Gmail and calendar for efficient data management.",
+      name: "Gmail and Calendar Integrations",
+      company: "BizAI",
+    },
+    {
+      quote: "📱 WhatsApp Integration: Interact with BizAI through WhatsApp for convenience.",
+      name: "WhatsApp Integration",
+      company: "BizAI",
+    },
+    {
+      quote: "✍️ Natural Language Database Editing: Edit your database using natural language commands.",
+      name: "Natural Language Database Editing",
+      company: "BizAI",
+    },
+    {
+      quote: "📅 Scheduled Daily Data Analysis: Set up automatic daily data analysis.",
+      name: "Scheduled Daily Data Analysis",
+      company: "BizAI",
+    },
+    {
+      quote: "🧠 Automatic Insights: Get valuable insights without manual analysis.",
+      name: "Automatic Insights",
+      company: "BizAI",
+    },
+    {
+      quote: "💡 Feature Requests: Share your ideas and suggestions with us at founder@mail.com",
+      name: "Feature Requests",
+      company: "BizAI",
+    },
+  ];
+
   return (
     <section className="relative">
-
       {/* Illustration behind content */}
       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none -mb-32" aria-hidden="true">
         <svg width="1760" height="518" viewBox="0 0 1760 518" xmlns="http://www.w3.org/2000/svg">
@@ -21,54 +66,35 @@ export default function UpcomingFeatures() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20">
-
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h2 className="h2 mb-4">Upcoming Features</h2>
-            <p className="text-xl text-gray-600" data-aos="zoom-y-out">Stay tuned for our exciting new features!</p>
+            <h2 className="h2 mb-4">Exciting Upcoming Features</h2>
+            <p className="text-xl text-gray-600" data-aos="zoom-y-out">
+              We're constantly innovating to make your experience even better!
+            </p>
           </div>
 
-          {/* Feature Items */}
-          <div className="max-w-sm md:max-w-4xl mx-auto grid gap-2 grid-cols-4 md:grid-cols-5">
-            {/* Feature Item 1 */}
-            <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
-              <svg className="max-w-full fill-current text-gray-400" width="124" height="24" viewBox="0 0 124 24" xmlns="http://www.w3.org/2000/svg">
-                {/* Add your feature icon here */}
-              </svg>
-              <p className="text-gray-700 mt-2">Feature 1</p>
-            </div>
-
-            {/* Feature Item 2 */}
-            <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
-              <svg className="max-w-full fill-current text-gray-400" width="83" height="30" viewBox="0 0 83 30" xmlns="http://www.w3.org/2000/svg">
-                {/* Add your feature icon here */}
-              </svg>
-              <p className="text-gray-700 mt-2">Feature 2</p>
-            </div>
-
-            {/* Feature Item 3 */}
-            <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
-              <svg className="max-w-full fill-current text-gray-400" width="125" height="39" viewBox="0 0 125 39" xmlns="http://www.w3.org/2000/svg">
-                {/* Add your feature icon here */}
-              </svg>
-              <p className="text-gray-700 mt-2">Feature 3</p>
-            </div>
-
-            {/* Feature Item 4 */}
-            <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
-              <svg className="max-w-full fill-current text-gray-400" width="125" height="39" viewBox="0 0 125 39" xmlns="http://www.w3.org/2000/svg">
-                {/* Add your feature icon here */}
-              </svg>
-              <p className="text-gray-700 mt-2">Feature 4</p>
-            </div>
-
-            {/* Feature Item 5 */}
-            <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
-              <svg className="max-w-full fill-current text-gray-400" width="125" height="39" viewBox="0 0 125 39" xmlns="http://www.w3.org/2000/svg">
-                {/* Add your feature icon here */}
-              </svg>
-              <p className="text-gray-700 mt-2">Feature 5</p>
-            </div>
+          {/* Features Cards */}
+          <div className="max-w-3xl mx-auto mt-20 grid gap-8 md:grid-cols-2">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex items-start border-2 border-gray-200 rounded bg-white"
+              >
+                {/* Feature */}
+                <div className="text-center p-6 md:p-8">
+                  <blockquote className="text-xl font-medium mb-4">
+                    {feature.quote}
+                  </blockquote>
+                  <cite className="block font-bold text-lg not-italic mb-1">
+                    {feature.name}
+                  </cite>
+                  <div className="text-gray-600">
+                    <span>{feature.company}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
