@@ -75,7 +75,7 @@ export default function UpcomingFeatures() {
           </div>
 
           {/* Features Cards */}
-          <div className="max-w-3xl mx-auto mt-20 grid gap-8 md:grid-cols-2">
+          <div className="max-w-3xl mx-auto mt-20 grid gap-8 md:grid-cols-4">
             {features.map((feature, index) => (
               <div
                 key={index}
